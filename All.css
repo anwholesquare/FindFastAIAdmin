@@ -1,0 +1,41 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.loginBC{
+    -fx-background-color : "#5DB9ED";
+}
+
+.loginTxt{
+    -fx-text-fill : "black";
+}
+.vbox{
+    -fx-background-color : gray;
+}
+.vboxbuttontext{
+    -fx-text-alignment: center;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-background-color : "#CEF6E8"; 
+}
+.vboxlinecolor{
+    -fx-background-color : "#75EBC0"; 
+}
+.vboxbuttontext:hover{
+    
+    -fx-text-alignment: center;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-background-color : "#338467"; 
+}
+.vboxbuttontext:pressed{
+    
+    -fx-text-alignment: center;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-background-color : "#1D9268"; 
+}
