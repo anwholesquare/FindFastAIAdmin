@@ -4,11 +4,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="find_fast_dash_board.TotalUserpaneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="find_fast_dash_board.PaymentController">
    <children>
       <VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="200.0" stylesheets="@All.css">
          <children>
@@ -22,7 +23,7 @@
                   <Font name="System Bold" size="17.0" />
                </font></Button>
             <Line endX="100.0" startX="-100.0" stroke="#75ebc0" />
-            <Button alignment="CENTER" minHeight="74.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="200.0" styleClass="vboxbuttontext" stylesheets="@All.css" text="User List">
+            <Button fx:id="Ulist" alignment="CENTER" minHeight="74.0" mnemonicParsing="false" onAction="#generatelist" prefHeight="74.0" prefWidth="200.0" styleClass="vboxbuttontext" stylesheets="@All.css" text="User List">
                <font>
                   <Font size="17.0" />
                </font></Button>
@@ -49,11 +50,21 @@
          </children>
       </VBox>
       <Line endX="-181.4000244140625" endY="485.0" layoutX="383.0" layoutY="115.0" startX="-181.4000244140625" startY="-115.0" stroke="#75ebc0" />
-      <Label layoutX="202.0" prefHeight="99.0" prefWidth="599.0" stylesheets="@All.css" text="User list">
+      <Label layoutX="202.0" prefHeight="99.0" prefWidth="599.0" stylesheets="@All.css" text="Payments">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <ListView fx:id="listView" layoutX="202.0" layoutY="99.0" prefHeight="506.0" prefWidth="599.0" />
+       <Pane layoutX="200.0" prefHeight="94.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="35.0" layoutY="25.0" prefHeight="44.0" prefWidth="122.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ListView fx:id="paylist" layoutX="200.0" layoutY="99.0" prefHeight="502.0" prefWidth="600.0" />
+      
    </children>
 </AnchorPane>
