@@ -54,7 +54,13 @@ public class SearchUserController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    List<User> users = new ArrayList<User>();
+    static List<User> users = new ArrayList<User>();
+    @FXML
+    private Button pay;
+    @FXML
+    private Button logo;
+    @FXML
+    private Button ms;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -153,6 +159,33 @@ public class SearchUserController implements Initializable {
                 }
             }
         }
+    }
+
+    @FXML
+    private void paytm(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Payment.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void logout(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("loginpanel.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void msp(ActionEvent event) throws IOException {
+         Parent root = FXMLLoader.load(getClass().getResource("temp.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="find_fast_dash_board.PaymentdetailsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="find_fast_dash_board.PaymentdetailsController">
    <children>
       <VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="200.0" stylesheets="@All.css">
          <children>
@@ -22,27 +22,27 @@
                   <Font name="System Bold" size="17.0" />
                </font></Button>
             <Line endX="100.0" startX="-100.0" stroke="#75ebc0" />
-            <Button alignment="CENTER" minHeight="74.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="200.0" styleClass="vboxbuttontext" stylesheets="@All.css" text="User List">
+            <Button fx:id="Ul" alignment="CENTER" minHeight="74.0" mnemonicParsing="false" onAction="#showlist" prefHeight="74.0" prefWidth="200.0" styleClass="vboxbuttontext" stylesheets="@All.css" text="User List">
                <font>
                   <Font size="17.0" />
                </font></Button>
             <Line endX="100.0" startX="-100.0" stroke="#75ebc0" />
-            <Button alignment="CENTER" minHeight="70.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" styleClass="vboxbuttontext" stylesheets="@All.css" text="Master Panel">
+            <Button fx:id="ms" alignment="CENTER" minHeight="70.0" mnemonicParsing="false" onAction="#msp" prefHeight="70.0" prefWidth="200.0" styleClass="vboxbuttontext" stylesheets="@All.css" text="Master Panel">
                <font>
                   <Font size="17.0" />
                </font></Button>
             <Line endX="100.0" startX="-100.0" stroke="#75ebc0" />
-            <Button alignment="CENTER" minHeight="78.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="200.0" styleClass="vboxbuttontext" stylesheets="@All.css" text="Search bar">
+            <Button fx:id="srch" alignment="CENTER" minHeight="78.0" mnemonicParsing="false" onAction="#srchsubs" prefHeight="78.0" prefWidth="200.0" styleClass="vboxbuttontext" stylesheets="@All.css" text="Search bar">
                <font>
                   <Font size="17.0" />
                </font></Button>
             <Line endX="100.0" startX="-100.0" stroke="#75ebc0" />
-            <Button alignment="CENTER" minHeight="80.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="200.0" styleClass="vboxbuttontext" stylesheets="@All.css" text="Payments">
+            <Button fx:id="pay" alignment="CENTER" minHeight="80.0" mnemonicParsing="false" onAction="#paytm" prefHeight="83.0" prefWidth="200.0" styleClass="vboxbuttontext" stylesheets="@All.css" text="Payments">
                <font>
                   <Font size="17.0" />
                </font></Button>
             <Line endX="100.0" startX="-100.0" stroke="#75ebc0" />
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="103.0" prefWidth="200.0" styleClass="vboxbuttontext" stylesheets="@All.css" text="Log Out">
+            <Button fx:id="logo" alignment="CENTER" mnemonicParsing="false" onAction="#logout" prefHeight="103.0" prefWidth="200.0" styleClass="vboxbuttontext" stylesheets="@All.css" text="Log Out">
                <font>
                   <Font size="17.0" />
                </font></Button>
@@ -67,8 +67,8 @@
       <Label layoutX="226.0" layoutY="200.0" prefHeight="35.0" prefWidth="146.0" styleClass="paymentdetailstext" stylesheets="@All.css" text="User ID       :" />
       <Label layoutX="226.0" layoutY="272.0" styleClass="paymentdetailstext" stylesheets="@All.css" text="User Name :" />
       <Label layoutX="219.0" layoutY="359.0" styleClass="paymentdetailstext" stylesheets="@All.css" text="Payment Cardinals " />
-      <Label layoutX="387.0" layoutY="200.0" prefHeight="35.0" prefWidth="374.0" text="Label" />
-      <Label layoutX="387.0" layoutY="272.0" prefHeight="35.0" prefWidth="374.0" text="Label" />
+      <Label fx:id="u_id" layoutX="387.0" layoutY="200.0" prefHeight="35.0" prefWidth="374.0" text="Label" />
+      <Label fx:id="u_name" layoutX="387.0" layoutY="272.0" prefHeight="35.0" prefWidth="374.0" text="Label" />
       <Label layoutX="307.0" layoutY="440.0" text="Amount">
          <font>
             <Font size="18.0" />
@@ -79,8 +79,8 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="442.0" layoutY="445.0" text="Label" />
-      <Label layoutX="442.0" layoutY="488.0" text="Label" />
+      <Label fx:id="amo" layoutX="442.0" layoutY="445.0" text="Label" />
+      <Label fx:id="met" layoutX="442.0" layoutY="488.0" text="Label" />
       
    </children>
 </AnchorPane>

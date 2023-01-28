@@ -25,7 +25,7 @@ public class FXMain extends Application {
     static int db = 0;
     @Override
     public void start(Stage primaryStage) throws IOException {
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("loginpanel.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("loginpanel.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("All.css").toExternalForm());

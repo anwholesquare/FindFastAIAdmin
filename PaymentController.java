@@ -4,6 +4,7 @@
  */
 package find_fast_dash_board;
 
+import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,6 +16,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -41,8 +43,16 @@ public class PaymentController implements Initializable {
     private Button srch;
     @FXML
     private Button Ulist;
+    static String za="";
+    String s1,s2,s3,s4,s5,s6;
+    
     @FXML
-    private ListView<String> paylist = new ListView<String>();
+    private ListView<String> paylist;
+    List<User1> users = new ArrayList<User1>();
+    @FXML
+    private Button logo;
+    @FXML
+    private Button ms;
 
     /**
      * Initializes the controller class.
@@ -63,38 +73,46 @@ public class PaymentController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(TotalUserpaneController.class.getName()).log(Level.SEVERE, null, ex);
         }
- 
+
         try {
             String check;
             check = in.readLine();
             System.out.println(check);
-            String[] res = check.split("@@@@", -2);
-            List<User1> users = new ArrayList<User1>();
-            for (int i =0; i<res.length; i++) {
-                if (res[i].equals("")) continue;
+            String[] res = check.split("@@@@", -3);
+            
+            for (int i = 0; i < res.length; i++) {
+                if (res[i].equals("")) {
+                    continue;
+                }
                 String[] res1 = res[i].split("@@@");
-                String s1 = res1[0];
-                String s2 = res1[1];
-                String s3 = res1[2];
-                String s4 = res1[3];
-                User1 us = new User1 (s1, s3, s2,s4);
+                 s1 = res1[0];
+                 s2 = res1[1];
+                 s3 = res1[2];
+                 s4 = res1[3];
+                 s5 = res1[4];
+                 s6 = res1[5];
+                
+                User1 us = new User1(s1, s2, s3, s4, s5, s6);
 //                System.out.println(res1[0]);
 //                System.out.println(res1[1]);
 //                System.out.println(res1[2]);
- 
-                users.add(us);}
- 
-            for(int i =0; i<users.size(); i++) {
-                //System.out.println(users.get(i).id + " " + users.get(i).name);
-                
-                paylist.getItems().add(users.get(i).id+"       "+users.get(i).amount+"       "+users.get(i).reason +"     ");
+
+                users.add(us);
             }
- 
+            paylist.getItems().add("id" + "             " + "user_id" + "              " + "status" + "              " + "Expire Date" + "                  " + "payment_id" + "            " + "Created Date");
+            for (int i = 0; i < users.size(); i++) {
+                //System.out.println(users.get(i).id+"       "+users.get(i).amount+"       "+users.get(i).reason +"     ");
+
+                paylist.getItems().add(users.get(i).id + "                         " + users.get(i).user_id + "                            " + users.get(i).status + "                          " + users.get(i).expdate + "                    " + users.get(i).pay_id + "                      " + users.get(i).create);
+            }
+
         } catch (IOException ex) {
             Logger.getLogger(TotalUserpaneController.class.getName()).log(Level.SEVERE, null, ex);
         }
- 
-    }    
+
+       
+
+    }
 
     @FXML
     private void opendash(ActionEvent event) throws IOException {
@@ -122,5 +140,42 @@ public class PaymentController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    
+
+    @FXML
+    private void user_detail(javafx.scene.input.MouseEvent event) throws IOException {
+        
+        String str = "https://khandokeranan.com/projects/findfastai/admin/verifysub.php?id=membership_id";
+        URL url0 = null;
+        try {
+            url0 = new URL(str);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(TotalUserpaneController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        za = s2;
+        Parent root = FXMLLoader.load(getClass().getResource("Paymentdetails.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void logout(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("loginpanel.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void msp(ActionEvent event) throws IOException {
+         Parent root = FXMLLoader.load(getClass().getResource("temp.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

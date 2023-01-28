@@ -28,7 +28,7 @@
                   <Font size="17.0" />
                </font></Button>
             <Line endX="100.0" startX="-100.0" stroke="#75ebc0" />
-            <Button alignment="CENTER" minHeight="70.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" styleClass="vboxbuttontext" stylesheets="@All.css" text="Master Panel">
+            <Button fx:id="ms" alignment="CENTER" minHeight="70.0" mnemonicParsing="false" onAction="#msp" prefHeight="70.0" prefWidth="200.0" styleClass="vboxbuttontext" stylesheets="@All.css" text="Master Panel">
                <font>
                   <Font size="17.0" />
                </font></Button>
@@ -43,7 +43,7 @@
                   <Font size="17.0" />
                </font></Button>
             <Line endX="100.0" startX="-100.0" stroke="#75ebc0" />
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="103.0" prefWidth="200.0" styleClass="vboxbuttontext" stylesheets="@All.css" text="Log Out">
+            <Button fx:id="logo" alignment="CENTER" mnemonicParsing="false" onAction="#logout" prefHeight="103.0" prefWidth="200.0" styleClass="vboxbuttontext" stylesheets="@All.css" text="Log Out">
                <font>
                   <Font size="17.0" />
                </font></Button>

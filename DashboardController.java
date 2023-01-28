@@ -71,6 +71,10 @@ public class DashboardController implements Initializable {
     private Button srch;
     @FXML
     private Button pay;
+    @FXML
+    private Button logo;
+    @FXML
+    private Button ms;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -84,10 +88,7 @@ public class DashboardController implements Initializable {
 
     @FXML
     private void generatelist(ActionEvent event) throws MalformedURLException, IOException {
-       
-      
-        
-        
+
         Parent root = FXMLLoader.load(getClass().getResource("TotalUserpane.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -106,7 +107,26 @@ public class DashboardController implements Initializable {
 
     @FXML
     private void paytm(ActionEvent event) throws IOException {
+        
         Parent root = FXMLLoader.load(getClass().getResource("Payment.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void logout(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("loginpanel.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void msp(ActionEvent event) throws IOException {
+          Parent root = FXMLLoader.load(getClass().getResource("temp.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);

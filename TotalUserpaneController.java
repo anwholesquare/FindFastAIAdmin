@@ -21,7 +21,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
  
 /**
@@ -38,6 +40,18 @@ public class TotalUserpaneController implements Initializable {
  
     @FXML
     private ListView<String> listView = new ListView <String>();
+    @FXML
+    private VBox sidebar;
+    @FXML
+    private Button dash;
+    @FXML
+    private Button srch;
+    @FXML
+    private Button pay;
+    @FXML
+    private Button logo;
+    @FXML
+    private Button ms;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -77,7 +91,7 @@ public class TotalUserpaneController implements Initializable {
             for(int i =0; i<users.size(); i++) {
                 //System.out.println(users.get(i).id + " " + users.get(i).name);
                 
-                listView.getItems().add(users.get(i).id+"       "+users.get(i).name+"       "+users.get(i).email);
+                listView.getItems().add(users.get(i).id+"                                                 "+users.get(i).name+"                           "+users.get(i).email);
             }
  
         } catch (IOException ex) {
@@ -104,4 +118,32 @@ public class TotalUserpaneController implements Initializable {
         stage.setScene(scene);
         stage.show();
  
-}}
+}
+
+    @FXML
+    private void paytm(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Payment.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void logout(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("loginpanel.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void msp(ActionEvent event) throws IOException {
+         Parent root = FXMLLoader.load(getClass().getResource("temp.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+}

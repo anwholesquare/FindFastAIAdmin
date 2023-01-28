@@ -19,6 +19,7 @@ import java.net.MalformedURLException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
@@ -38,6 +39,8 @@ public class LoginpanelController implements Initializable {
 
     String str1;
     String str2;
+    @FXML
+    private Label msg;
     
     
 
@@ -69,6 +72,7 @@ public class LoginpanelController implements Initializable {
 
 
         if (check.equals("0")) {
+            msg.setText("Username or password is incorect");
            
         } else {
          Stage primaryStage = new Stage();
